@@ -49,24 +49,22 @@ else:
                     break
                 json = response.json()
                 count = None
-                code = None
                 for repo in json:
                     if language:
                         if repo['language'] not in (language.title(),language):
-                            print(repo['language'],language)
                             continue
                     count = True
                     print(f'{repo["name"]}', end='')
-                    if repo["description"] != 'None':
+                    if repo["description"]:
                         print(f': {repo["description"]}')
                     else:
                         print()
-                    if yes == 'n':
-                        if repo["language" ]!= None:
+                    if repo["language"]:
+                        if yes == 'n':
                             print(f'Language: {repo["language"]}')
-                            code = True
-                        else:
-                            code = None
+                        code = True
+                    else:
+                        code = None
                     print(f'Forks: {repo["forks_count"]}')
                     print(f'Stars: {repo["stargazers_count"]}')
                     print(f'Watchers: {repo["watchers_count"]}')
