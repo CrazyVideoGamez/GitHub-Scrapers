@@ -1,5 +1,4 @@
 import requests
-from bs4 import BeautifulSoup
 
 person = input('Enter a user: ')
 while True:
