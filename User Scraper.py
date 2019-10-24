@@ -18,7 +18,7 @@ response = requests.get(
     params={'q': person},
 )
 if not response.ok:
-    print('An error ocurred')
+    print('An error occurred')
 
 json_response = response.json()
 if len(json_response) == 0:
@@ -45,7 +45,7 @@ else:
                     print(f'{user["login"]} has {norm["public_repos"]} repostories')
                 response = requests.get('https://api.github.com/users/'+user['login']+'/repos')
                 if not response.ok:
-                    print('An error ocurred')
+                    print('An error occurred')
                     break
                 json = response.json()
                 count = None
